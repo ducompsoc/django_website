@@ -1,0 +1,31 @@
+{% extends 'website/nav.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Homepage - Durham CompSoc</title>
+  <link href="{% static 'home/style.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block scripts %}
+  <script defer src="https://embed.typeform.com/embed.js"></script>
+  <script defer src="{% static 'home/typeform.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+  <div class="banner-container">
+    <object class="mobile-banner" data="{% static 'home/mobile-banner-o.svg' %}" type="image/svg+xml"></object>
+    <object class="desktop-banner" data="{% static 'home/homepage-banner-o.svg' %}" type="image/svg+xml"></object>
+  </div>
+  <div class="jumbotron banner-jumbotron">
+    <div class="panel panel-default main-info-panel">
+      <div class="panel-body main-info-panel-body">
+        <h2>Do you love technology? Programming? Or just want to learn something new?</h2>
+        <h3>CompSoc runs talks, hackathons and workshops for Durham students throughout the year.</h3>
+        <h3>Join today to be notified of upcoming events.</h3>
+        <button class="typeformButton button btn btn-success sign-up-link">Join Now!</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
