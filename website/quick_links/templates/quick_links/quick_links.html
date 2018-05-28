@@ -1,0 +1,44 @@
+{% load static %}
+
+{% block head %}
+<link href="{% static 'quick_links/style.css' %}" rel="stylesheet" />
+{% endblock %}
+
+<div class="container quickLinks">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>The Team</h2>
+      <p>Click to know the Who's Who of CompSoc.</p>
+      <a class="btn btn-default homepage-btn-vertical" href="team" role="button">View details &raquo;</a>
+    </div>
+    <div class="col-md-3">
+      <h2>What's On</h2>
+      <p>Click to know what's happening in CompSoc, our past events and upcoming events.</p>
+      <a class="btn btn-default homepage-btn-vertical" href="events" role="button">View details &raquo;</a>
+    </div>
+    <div class="col-md-3">
+      <h2>Our Sponsors</h2>
+      <p>They help us run smoothly and happily :) Click to know more.</p>
+      <a class="btn btn-default homepage-btn-vertical" href="sponsors" role="button">View details &raquo;</a>
+    </div>
+    <div class="col-md-3">
+      <h2>Say Hi To Us!</h2>
+      <p>Click to get in touch with us by email, social media or leave your valuable feedback.</p>
+      <a class="btn btn-default homepage-btn-vertical" href="contact" role="button">View details &raquo;</a>
+    </div>
+  </div>
+  <div class="row btn-container">
+    <div class="col-md-3">
+      <a class="btn btn-default homepage-btn-horizontal" href="team" role="button">View details &raquo;</a>
+    </div>
+    <div class="col-md-3">
+      <a class="btn btn-default homepage-btn-horizontal" href="events" role="button">View details &raquo;</a>
+    </div>
+    <div class="col-md-3">
+      <a class="btn btn-default homepage-btn-horizontal" href="sponsors" role="button">View details &raquo;</a>
+    </div>
+    <div class="col-md-3">
+      <a class="btn btn-default homepage-btn-horizontal" href="contact" role="button">View details &raquo;</a>
+    </div>
+  </div>
+</div>
