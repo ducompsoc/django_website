@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'events.apps.EventsConfig',
     'quick_links.apps.QuickLinksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -125,3 +126,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "website/static"),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"

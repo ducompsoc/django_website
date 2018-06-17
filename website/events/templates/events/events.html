@@ -1,0 +1,61 @@
+{% extends 'website/nav.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Events - Durham CompSoc</title>
+  <link href="{% static 'events/events.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block scripts %}
+  <script defer src="https://embed.typeform.com/embed.js"></script>
+  <script defer src="{% static 'home/typeform.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+  <div class="container">
+    <div class="col-md-12">
+      <p class="information">
+        CompSoc holds events all year round, from hackathons to tech-talks to weekly meetings. Come along and learn
+        something new, meet new people and build some awesome stuff.
+      </p>
+      <p class="information">
+        <button type="button" class="sign-up-link btn-link">Sign up to our mailing list</button> to be the first to
+        hear about upcoming events!
+      </p>
+      <p class="information">Take a look at past and future events:</p>
+    </div>
+    <div class="col-md-6">
+      <h2>What's Next?</h2>
+      <p class="information">Mark your calendars for these upcoming events!</p>
+      <div class="row">
+        <blockquote>
+          We have a couple of projects in the works for after exams – 
+          <button type = button class="sign-up-link btn-link">sign up to our mailing list</button> to be the first to
+          hear about them!
+        </blockquote>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>What We've Done!</h2>
+      <p class="information">Here's all the events we've conducted in the past.</p>
+      {% if events %}
+        {% for event in events %}
+          <div class=row>
+            <img src="{{event.image.url}}"/>
+            <a class="btn btn-info btn-block" href="#{{event.pk}}" data-toggle="collapse">{{ event.title }}</a>
+            <div id="{{event.pk}}" class="collapse">
+              <p>{{event.content}}</p> 
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No events are available.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
