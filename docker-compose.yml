@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+      - ./nginx:/etc/nginx/conf.d
+      - ./website/static:/static
+      - ./website/media:/media
+    depends_on:
+      - web
+  web:
+    build: .
+    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py collectstatic --noinput && python3 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./website:/code
+    expose:
+      - "8000"
+    depends_on:
+      - db
+  db:
+    image: postgres

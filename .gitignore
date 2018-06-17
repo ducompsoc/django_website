@@ -1,1 +1,6 @@
 __pycache__/
+.python-version
+website/media
+website/static
+website/unimportantFile.json
+
