@@ -8,15 +8,15 @@ services:
     volumes:
       - ./src:/src
       - ./nginx:/etc/nginx/conf.d
-      - ./website/static:/static
-      - ./website/media:/media
+      - ./django/static:/static
+      - ./django/media:/media
     depends_on:
-      - web
-  web:
-    build: .
-    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py collectstatic --noinput && python3 manage.py runserver 0.0.0.0:8000"
+      - django
+  django:
+    build: ./django
+    command: ["./start_web.sh", "db"]
     volumes:
-      - ./website:/code
+      - ./django:/django
     expose:
       - "8000"
     depends_on:

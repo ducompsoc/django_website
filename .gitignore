@@ -1,6 +1,6 @@
 __pycache__/
 .python-version
-website/media
-website/static
-website/unimportantFile.json
+django/media
+django/static
+django/unimportantFile.json
 
