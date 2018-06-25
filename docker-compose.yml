@@ -1,25 +1,31 @@
-version: '3'
+version: '3.3'
 
 services:
   nginx:
-    image: nginx:latest
+    build: ./nginx
     ports:
-      - "8000:8000"
+      - "8000:443"
     volumes:
-      - ./src:/src
-      - ./nginx:/etc/nginx/conf.d
-      - ./django/static:/static
-      - ./django/media:/media
+      - ./nginx/root:/etc/nginx/tls
+      - static:/static:ro
+      - media:/media:ro
     depends_on:
       - django
   django:
     build: ./django
-    command: ["./start_web.sh", "db"]
+    command: ["/django/start_web.sh", "db"]
     volumes:
-      - ./django:/django
+      - static:/django/static
+      - media:/django/media
     expose:
       - "8000"
     depends_on:
       - db
   db:
     image: postgres
+
+# Create named volumes to share data between django and nginx.
+# Django collects static files and creates media files, nginx serves them.
+volumes:
+  static:
+  media:
