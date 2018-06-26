@@ -6,7 +6,6 @@ services:
     ports:
       - "8000:443"
     volumes:
-      - ./nginx/root:/etc/nginx/tls
       - static:/static:ro
       - media:/media:ro
     depends_on:
