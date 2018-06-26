@@ -11,9 +11,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 with open(os.path.join(BASE_DIR, "/django/unimportantFile.json")) as secrets_file:
     settings = json.load(secrets_file)
 
-admin_user = django.contrib.auth.models.User.objects.create_superuser(
-   username=settings["ADMIN_USERNAME"],
-   email=settings["ADMIN_EMAIL"],
-   password=settings["ADMIN_PASSWORD"])
+try:
+    admin_user = django.contrib.auth.models.User.objects.create_superuser(
+       username=settings["ADMIN_USERNAME"],
+       email=settings["ADMIN_EMAIL"],
+       password=settings["ADMIN_PASSWORD"])
 
-admin_user.save()
+    admin_user.save()
+except django.db.utils.IntegrityError:
+    print("Admin user already created")
