@@ -28,8 +28,14 @@ SECRET_KEY = settings["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["django"]
+ALLOWED_HOSTS = ["localhost"]
 
+# SECURITY WARNING: only run with secure cookies in production!
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# Django uses the hostname of the container (django) otherwise
+USE_X_FORWARDED_HOST = True
 
 # Application definition
 
@@ -42,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',  # Not good in production
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [

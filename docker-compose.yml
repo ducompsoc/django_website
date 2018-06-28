@@ -12,7 +12,7 @@ services:
       - django
   django:
     build: ./django
-    command: ["/django/start_web.sh", "db"]
+    command: ["/django/start_web.sh"]
     volumes:
       - static:/django/static
       - media:/django/media
