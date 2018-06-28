@@ -1,3 +1,4 @@
 django
 Pillow
 psycopg2-binary
+gunicorn
