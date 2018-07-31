@@ -1,4 +1,4 @@
-{% extends 'website/nav.html' %}
+{% extends 'website/pages.html' %}
 {% load static %}
 
 {% block head %}
@@ -13,9 +13,12 @@
 
 {% block content %}
 <div class="wrapper">
-  <div class="container">
+  <div class="banner-container">
+    <object class="desktop-banner" data="{% static 'events/events-banner-o.svg' %}" type="image/svg+xml"></object>
+  </div>
+  <div class="container contents-container">
     <div class="col-md-12">
-      <p class="information">
+      <p class="strapline">
         CompSoc holds events all year round, from hackathons to tech-talks to weekly meetings. Come along and learn
         something new, meet new people and build some awesome stuff.
       </p>

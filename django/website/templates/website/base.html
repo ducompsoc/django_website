@@ -10,6 +10,8 @@
   <link href="{% static 'website/bootstrap.min.css' %}" rel="stylesheet" />
   <link href="{% static 'website/style.css' %}" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Jura:400,600|Raleway:400,600" rel="stylesheet" />
+  {% block pages-head %}
+  {% endblock %}
   {% block head %}
   {% endblock %}
   <script defer src="{% static 'website/fontawesome-all.min.js' %}"></script>
