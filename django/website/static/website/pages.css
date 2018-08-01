@@ -1,3 +1,23 @@
 .contents-container {
   padding: 2em 0;
 }
+
+/* Banner */
+@media (max-width: 991px) {
+    .mobile-banner {
+        display: block;
+    }
+    .desktop-banner {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-banner {
+        display: none;
+    }
+    .desktop-banner {
+        display: block;
+        max-height: 300px;
+    }
+}
