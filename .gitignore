@@ -2,5 +2,5 @@ __pycache__/
 .python-version
 django/media
 django/static
-django/unimportantFile.json
+django/unimportant_file.json
 

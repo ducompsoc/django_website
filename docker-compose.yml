@@ -12,10 +12,12 @@ services:
       - django
   django:
     build: ./django
-    command: ["/django/start_web.sh"]
+    environment:
+      - DJANGO_SETTINGS_MODULE=website.settings
     volumes:
       - static:/django/static
       - media:/django/media
+    # As django only ever needs to talk to nginx, expose internally only.
     expose:
       - "8000"
     depends_on:
