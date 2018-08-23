@@ -1,9 +1,11 @@
 from django.db import models
 from django.utils import timezone
 
+
 def image_upload_path_handler(instance, filename):
     # pk chosen because can't be sure that title will be nice to use as a path
     return "events/img/{0}_{1}.jpg".format(instance.pk, timezone.now())
+
 
 class Event(models.Model):
     title = models.CharField(max_length=100)

@@ -19,6 +19,7 @@
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
           crossorigin="anonymous"></script>
   <script defer src="{% static 'website/bootstrap.min.js' %}"></script>
+  <!--<script src="{% static 'website/footerCalc.js' %}"></script>-->
   {% block scripts %}
   {% endblock %}
 </head>
@@ -31,10 +32,10 @@
   <div class="footer">
     <div>
       <p>&copy; 2016-{{ current_year }} <a href="https://www.compsoc.tech/">Durham University Computing Society</a> <br/>
-      <span>Durham University Computing Society is a student group affiliated with
+      <div class="container">Durham University Computing Society is a student group affiliated with
         <a href="https://durhamsu.com">Durham Students' Union</a>, which is registered in England as a company
         limited by guarantee (07689815) and a charity (1145400). Durham Students' Union's registered office is
-        Dunelm House, New Elvet, Durham, DH1 3AN.</span>
+        Dunelm House, New Elvet, Durham, DH1 3AN.</div>
       </p>
     </div>
   </div>

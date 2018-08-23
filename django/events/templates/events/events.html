@@ -32,24 +32,36 @@
     <div class="col-md-6">
       <h2>What's Next?</h2>
       <p class="information">Mark your calendars for these upcoming events!</p>
-      <div class="row">
-        <blockquote>
-          We have a couple of projects in the works for after exams – 
-          <button type = button class="sign-up-link btn-link">sign up to our mailing list</button> to be the first to
-          hear about them!
-        </blockquote>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <h2>What We've Done!</h2>
-      <p class="information">Here's all the events we've conducted in the past.</p>
-      {% if events %}
-        {% for event in events %}
+      {% if upcoming_events %}
+        {% for event in upcoming_events %}
           <div class=row>
             <img src="{{event.image.url}}"/>
             <a class="btn btn-info btn-block" href="#{{event.pk}}" data-toggle="collapse">{{ event.title }}</a>
             <div id="{{event.pk}}" class="collapse">
-              <p>{{event.content}}</p> 
+              <p>{{event.content}}</p>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="row">
+          <blockquote>
+            We have a couple of projects in the works for after exams –
+            <button type = button class="sign-up-link btn-link">sign up to our mailing list</button> to be the first to
+            hear about them!
+          </blockquote>
+        </div>
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <h2>What We've Done!</h2>
+      <p class="information">Here's all the events we've conducted in the past.</p>
+      {% if past_events %}
+        {% for event in past_events %}
+          <div class=row>
+            <img src="{{event.image.url}}"/>
+            <a class="btn btn-info btn-block" href="#{{event.pk}}" data-toggle="collapse">{{ event.title }}</a>
+            <div id="{{event.pk}}" class="collapse">
+              <p>{{event.content}}</p>
             </div>
           </div>
         {% endfor %}
