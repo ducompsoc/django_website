@@ -21,3 +21,7 @@
         max-height: 300px;
     }
 }
+
+.banner-container > object {
+    max-height: 200px;
+}
