@@ -8,7 +8,6 @@ from django.conf import settings as project_settings
 
 
 def setup_django():
-
     # Not necessarily required as working directory is /django. May prevent future bugs however
     sys.path.append('/django')
 
@@ -16,7 +15,6 @@ def setup_django():
 
 
 def create_new_migrations():
-
     # On every run, try to apply all migrations. May do nothing, but that's ok
     django.core.management.execute_from_command_line(['manage.py', 'makemigrations'])
 
