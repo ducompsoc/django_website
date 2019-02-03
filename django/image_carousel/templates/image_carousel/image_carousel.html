@@ -1,0 +1,39 @@
+{% load static %}
+
+{% block head %}
+  <link href="{% static 'image_carousel/style.css' %}" rel="stylesheet" \>
+{% endblock %}
+
+<div class="carousel slide" id="carousel" data-ride="carousel" data-interval="false">
+  <ol class="carousel-indicators">
+    {% for image_model in image_models %}
+      {% if forloop.first %}
+        <li class="active" data-target="#carousel" data-slide-to="{{forloop.counter0}}"></li>
+      {% else %}
+        <li data-target="#carousel" data-slide-to="{{forloop.counter0}}"></li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    {% for image_model in image_models %}
+      {% if forloop.first %}
+        <div class="item active">
+      {% else %}
+        <div class="item">
+      {% endif %}
+          <img src="{{image_model.image.url}}" alt="img{{forloop.counter}}">
+        </div>
+    {% endfor %}
+  </div>
+
+  <!--left and right controls-->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

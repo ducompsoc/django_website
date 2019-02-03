@@ -1,0 +1,79 @@
+{% extends 'website/pages.html' %}
+{% load static %}
+
+{% block head %}
+  <title>About - Durham CompSoc</title>
+  <link href="{% static 'about/about.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+  <div class="banner-container">
+    <object class="desktop-banner" data="{% static 'about/about-banner-o.svg' %}" type="image/svg+xml"></object>
+    <object class="mobile-banner" data="{% static 'about/about-banner-mobile-o.svg' %}" type="image/svg+xml"></object>
+  </div>
+  <div class="container contents-container">
+    <div class="col-md-12">
+      <p class="strapline">
+        CompSoc is Durham University’s Computing Society. It is run entirely by students and serves to promote
+        programming, development and general computing. We are a community of passionate problem solvers who
+        come together to run weekly meetings, workshops and hackathons throughout the year. No matter if
+        you're a novice or expert, come down to see what we have to offer!
+      </p>
+      <p class="information">
+        Browse around the site to find out more!
+      </p>
+    </div>
+    <div class="col-md-6">
+      left content
+    </div>
+    <div class="col-md-6">
+      {% include 'image_carousel/image_carousel.html' with image_models=models.image_carousel_image_models %}
+    </div>
+  </div>
+  {% include 'quick_links/quick_links.html' %}
+</div>
+
+{% endblock %}
+<!--
+block content
+    div.row
+        .container
+            div.col-md-6
+                p.information.
+                    CompSoc is Durham University’s Computing Society. It is run entirely by students and serves to promote
+                    programming, development and general computing. We are a community of passionate problem solvers who
+                    come together to run weekly meetings, workshops and hackathons throughout the year. No matter if
+                    you're a novice or expert, come down to see what we have to offer! <br/><br/>
+                    Browse around the site to find out more!
+
+                //images carousel (next to the description)
+
+            div.col-md-6
+                #carousel-images.carousel.slide(data-ride=carousel data-interval="false")
+                    ol.carousel-indicators
+                        li.active(data-target="#carousel-images" data-slide-to="0")
+                        li(data-target="#carousel-images" data-slide-to="1")
+                        li(data-target="#carousel-images" data-slide-to="2")
+                        li(data-target="#carousel-images" data-slide-to="3")
+
+                    div.carousel-inner(role="listbox")
+                        div.item.active
+                            img(src="./img/about_carousel_1-Joe_Nash_Durhack_Initial_Talks_Group_Photo_2016-17.jpg" alt="img1")
+                        div.item
+                            img(src="./img/about_carousel_2-Scott_Logic_Hackathon_2016-17.jpg" alt="img2")
+                        div.item
+                            img(src="./img/about_carousel_3-BP_Supply_And_Trading_2016-17.jpg" alt="img3")
+                        div.item
+                            img(src="./img/about_carousel_4-Joe_Nash_Durhack_Presentation_2016-17.jpg" alt="img4")
+
+                        //left and right controls
+
+                    a.left.carousel-control(href="#carousel-images" role="button" data-slide="prev")
+                        span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+                        span.sr-only Previous
+                    a.right.carousel-control(href="#carousel-images" role="button" data-slide="next")
+                        span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+                        span.sr-only Next
+    div.row
+        +quickLinks -->

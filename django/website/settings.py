@@ -39,9 +39,12 @@ USE_X_FORWARDED_HOST = True
 # Application definition
 
 INSTALLED_APPS = [
+    'site_wide.apps.SiteWideConfig',
     'home.apps.HomeConfig',
+    'about.apps.AboutConfig',
     'events.apps.EventsConfig',
     'quick_links.apps.QuickLinksConfig',
+    'image_carousel.apps.ImageCarouselConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
