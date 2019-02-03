@@ -112,6 +112,7 @@ html, body {
 /* Height of navbar minus height of footer */
 .wrapper {
     min-height: calc(100vh - 50px - 88px);
+    padding-bottom: 2em;
 }
 
 .hiredGradButton {

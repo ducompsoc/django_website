@@ -31,35 +31,31 @@
     margin-top: 0.5rem !important;
 }
 
-.quickLinks {
-    padding: 2rem 2rem;
-}
-
 /* Homepage Banner */
 @media (max-width: 500px) {
-    .mobile-banner {
+    .banner-container > .mobile-banner {
         display: block;
     }
-    .desktop-banner {
+    .banner-container > .desktop-banner {
         display: none;
     }
 }
 
 @media (min-width: 501px) {
-    .mobile-banner {
+    .banner-container > .mobile-banner {
         display: none;
     }
-    .desktop-banner {
+    .banner-container > .desktop-banner {
         display: block;
         max-height: 300px;
     }
 }
 
 @media (min-width: 2561px) {
-    .mobile-banner {
+    .banner-container > .mobile-banner {
         display: none;
     }
-    .desktop-banner {
+    .banner-container > .desktop-banner {
         display: block;
     }
 }

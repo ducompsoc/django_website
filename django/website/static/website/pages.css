@@ -1,5 +1,5 @@
 .contents-container {
-  padding: 2em 0;
+  padding-top: 2em;
 }
 
 /* Banner */
@@ -24,4 +24,8 @@
 
 .banner-container > object {
     max-height: 200px;
+}
+
+.quickLinks {
+    padding-top: 2rem;
 }
